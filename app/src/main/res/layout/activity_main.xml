@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Hangman image (optional: add hangman_0..hangman_6 into res/drawable) -->
+        <ImageButton
+            android:id="@+id/hangmanImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerInside"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/untitled"
+            android:src="@drawable/a1" />
+
+        <!-- Word display -->
+        <TextView
+            android:id="@+id/wordText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" _ _ _ _ "
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp" />
+
+        <!-- Attempts label -->
+        <TextView
+            android:id="@+id/attemptsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Attempts left: 6"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:paddingBottom="4dp" />
+
+        <!-- Attempts ProgressBar (max=6) -->
+        <ProgressBar
+            android:id="@+id/attemptsBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:max="6"
+            android:progress="6" />
+
+        <!-- Alphabet buttons in a simple table (no GridLayout) -->
+        <TableLayout
+            android:id="@+id/lettersTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*"
+            android:shrinkColumns="*"
+            android:paddingTop="16dp">
+
+            <!-- Row 1: A B C D E F G -->
+            <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@+id/btnA" android:text="A" android:onClick="letterClick" />
+                <Button android:id="@+id/btnB" android:text="B" android:onClick="letterClick" />
+                <Button android:id="@+id/btnC" android:text="C" android:onClick="letterClick" />
+                <Button android:id="@+id/btnD" android:text="D" android:onClick="letterClick" />
+                <Button android:id="@+id/btnE" android:text="E" android:onClick="letterClick" />
+                <Button android:id="@+id/btnF" android:text="F" android:onClick="letterClick" />
+                <Button android:id="@+id/btnG" android:text="G" android:onClick="letterClick" />
+            </TableRow>
+
+            <!-- Row 2: H I J K L M N -->
+            <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@+id/btnH" android:text="H" android:onClick="letterClick" />
+                <Button android:id="@+id/btnI" android:text="I" android:onClick="letterClick" />
+                <Button android:id="@+id/btnJ" android:text="J" android:onClick="letterClick" />
+                <Button android:id="@+id/btnK" android:text="K" android:onClick="letterClick" />
+                <Button android:id="@+id/btnL" android:text="L" android:onClick="letterClick" />
+                <Button android:id="@+id/btnM" android:text="M" android:onClick="letterClick" />
+                <Button android:id="@+id/btnN" android:text="N" android:onClick="letterClick" />
+            </TableRow>
+
+            <!-- Row 3: O P Q R S T -->
+            <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@+id/btnO" android:text="O" android:onClick="letterClick" />
+                <Button android:id="@+id/btnP" android:text="P" android:onClick="letterClick" />
+                <Button android:id="@+id/btnQ" android:text="Q" android:onClick="letterClick" />
+                <Button android:id="@+id/btnR" android:text="R" android:onClick="letterClick" />
+                <Button android:id="@+id/btnS" android:text="S" android:onClick="letterClick" />
+                <Button android:id="@+id/btnT" android:text="T" android:onClick="letterClick" />
+            </TableRow>
+
+            <!-- Row 4: U V W X Y Z -->
+            <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                <Button android:id="@+id/btnU" android:text="U" android:onClick="letterClick" />
+                <Button android:id="@+id/btnV" android:text="V" android:onClick="letterClick" />
+                <Button android:id="@+id/btnW" android:text="W" android:onClick="letterClick" />
+                <Button android:id="@+id/btnX" android:text="X" android:onClick="letterClick" />
+                <Button android:id="@+id/btnY" android:text="Y" android:onClick="letterClick" />
+                <Button android:id="@+id/btnZ" android:text="Z" android:onClick="letterClick" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- Reset button -->
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>
