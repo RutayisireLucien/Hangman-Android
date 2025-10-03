@@ -1,6 +1,6 @@
-# LoginScreen
+# Hangman Android
 
-A simple login screen application — ideal for practicing user interface design, authentication flow, and form validation.
+A classic **Hangman** game implemented for Android — guess the word by selecting letters before running out of guesses.
 
 ## Table of Contents
 - [About](#about)
@@ -14,69 +14,72 @@ A simple login screen application — ideal for practicing user interface design
 - [Contact](#contact)
 
 ## About
-This project implements a login screen UI, allowing users to input credentials (e.g. username/email and password). It demonstrates frontend layout, form validation, and possibly simple authentication logic or stubs.
+This project is an Android app version of the Hangman game. Users guess letters to uncover a hidden word, with limited incorrect attempts allowed. The app shows which letters have been guessed, how many guesses remain, and gives feedback on win/loss.
 
 ## Features
-- Input fields for username/email and password  
-- Form validation (e.g. required fields, password constraints)  
-- Login button / submit action  
-- Error handling / validation feedback  
-- (Optional) Placeholder for "Forgot password" or "Sign Up" links  
+- Guess letters one at a time  
+- Show placeholders for unguessed letters  
+- Track and display letters already guessed  
+- Limit of incorrect guesses before losing  
+- Win / lose feedback  
+- Option to start a new game  
 
 ## Tech Stack
 | Layer | Technology / Tool |
 |---|---|
-| UI / Frontend | (e.g. Java Swing, JavaFX, Android / Web framework) |
-| Language | (e.g. Java, Kotlin, JavaScript) |
-| Build System / Tooling | (e.g. Gradle, Maven, Webpack) |
-| IDE / Editor | (Your preferred editor) |
+| Language | Java / Kotlin (depending on the project’s implementation) |
+| Platform | Android SDK |
+| UI | Android XML layouts, Android Views or Jetpack UI components |
+| Build System | Gradle |
+| IDE | Android Studio recommended |
 
 ## Getting Started
 
 ### Prerequisites
-- Install the appropriate SDK / runtime (e.g. JDK, Node.js)  
-- Build tool (e.g. Gradle, Maven, npm)  
-- An IDE / editor with support for your project’s language  
+- Android Studio  
+- Android SDK with appropriate API levels  
+- A device or emulator to run the app  
 
 ### Installation & Running
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/RutayisireLucien/LoginScreen.git
-    cd LoginScreen
+    git clone https://github.com/RutayisireLucien/Hangman-Android.git
+    cd Hangman-Android
     ```
 
-2. **Build the project**
-    ```bash
-    ./gradlew build
-    ```
-    *(Or use your project's build command, e.g. `mvn package`, `npm install`, etc.)*
+2. **Open in Android Studio**
+   - Use “Open an existing project” and choose the cloned directory  
+   - Wait for Gradle sync / build
 
-3. **Run the app**
-    ```bash
-    ./gradlew run
-    ```
-    *(Or the equivalent command or start script in your project)*
+3. **Run the App**
+   - Select an emulator or connected device  
+   - Press Run / Play in Android Studio  
 
 ## Usage
-- Launch the application  
-- Enter your username/email in the username field  
-- Enter your password in the password field  
-- Press “Login”  
-- The app will validate inputs and show success or error messages  
-- You can expand this flow to connect to a backend or local authentication  
+- Launch the app on your Android device or emulator  
+- A hidden word is shown as blank underscores  
+- Tap letters to guess them  
+- The app reveals correct letters in the word  
+- Incorrect guesses reduce your remaining tries  
+- Win if you guess the word before running out of tries  
+- Optionally start a new game  
 
 ## Project Structure
 ```text
-LoginScreen/
-├── src/                      # Source code files (UI, logic)
-│   └── ... (packages, classes, components)
-├── build.gradle.kts          # Gradle build script (if applicable)
-├── settings.gradle.kts
+Hangman-Android/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/           # Game logic, activities, controllers
+│   │   │   └── res/            # XML layouts, drawables, strings
+│   │   └── AndroidManifest.xml
+│   └── build.gradle
+├── build.gradle
+├── settings.gradle
 ├── gradle.properties
 ├── gradlew
 ├── gradlew.bat
-├── package.json              # If using JS / Node environment
 └── .gitignore
 ```
 
